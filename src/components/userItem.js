@@ -3,8 +3,9 @@ import React from "react";
 export default function UserItem(props) {
   const { user } = props;
   //console.log(props);
-  const handleAdd = () => {
+  const handleAdd = (user) => {
     props.addUser(user);
+    console.log(user);
   };
   return (
     <tr>
@@ -14,7 +15,7 @@ export default function UserItem(props) {
       <td>{user.phone}</td>
       <td>{user.sex}</td>
       <td>
-        <button className="btn btn-info" onClick={handleAdd}>
+        <button className="btn btn-info" onClick={() => handleAdd(user)}>
           Add
         </button>
       </td>
